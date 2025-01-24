@@ -5,6 +5,8 @@ import ColorList from "./ColorList.jsx";
 import NewColorForm from "./NewColorForm.jsx";
 import FilterColors from "./FilterColors.jsx";
 
+import useLocalStorage from "./hooks/useLocalStorage.jsx";
+
 import './App.css';
 
 const initialColors = [
@@ -14,7 +16,7 @@ const initialColors = [
 ];
 
 function App() {
-  const [colors, setColors] = useState(initialColors);
+  const [colors, setColors] = useLocalStorage("colors", initialColors);
 
   const addNewColor = (newColor) => {
     setColors([newColor, ...colors]);
