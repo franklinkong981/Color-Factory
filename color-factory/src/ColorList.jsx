@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {v4 as uuid} from "uuid";
 
-const ColorList = ({colors}) => {
+const ColorList = ({colors, resetColors}) => {
   return (
     <div className="ColorList">
       <h1 className="ColorList-welcome">Welcome to the Color Factory!</h1>
@@ -14,7 +14,7 @@ const ColorList = ({colors}) => {
       </ul>
       <h2 className="ColorList-new-color-header">Or add a new color to the list</h2>
       <button className="ColorList-new-color-button"><Link to="/colors/new">Add New Color</Link></button>
-      <button className="ColorList-home-button" onClick={() => navigate("/dogs")}>Back to Home Page</button>
+      <button className="ColorList-rest-colors-button" onClick={() => resetColors()}>Reset Colors</button>
     </div>
   );
 };

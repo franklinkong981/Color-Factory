@@ -7,23 +7,27 @@ import FilterColors from "./FilterColors.jsx";
 
 import './App.css';
 
-const initialValues = [
-  {name: "red", hex: "#FF0000"},
-  {name: "yellow", hex: "#FFFF00"},
-  {name: "green", hex: "#00FF00"}
+const initialColors = [
+  {name: "Red", hex: "#FF0000"},
+  {name: "Yellow", hex: "#FFFF00"},
+  {name: "Green", hex: "#00FF00"}
 ];
 
 function App() {
-  const [colors, setColors] = useState(initialValues);
+  const [colors, setColors] = useState(initialColors);
 
   const addNewColor = (newColor) => {
     setColors([newColor, ...colors]);
   }
 
+  const resetColors = () => {
+    setColors(initialColors);
+  };
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/colors" element={<ColorList colors={colors}/>} />
+        <Route path="/colors" element={<ColorList colors={colors} resetColors={resetColors}/>} />
         <Route path="/colors/new" element={<NewColorForm addNewColor={addNewColor}/>} />
         <Route path="/colors/:color" element={<FilterColors colorsToFilter={colors} />} />
         <Route path="*" element={<Navigate to="/colors" />} />

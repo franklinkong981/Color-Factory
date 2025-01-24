@@ -24,7 +24,7 @@ const NewColorForm = ({addNewColor}) => {
     validateOnBlur: false,
     onSubmit: values => {
       addNewColor(values);
-      
+      navigate("/colors");
     }
   });
 
