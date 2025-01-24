@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {v4 as uuid} from uuid;
+import {v4 as uuid} from "uuid";
 
 const ColorList = ({colors}) => {
   return (
@@ -9,7 +9,7 @@ const ColorList = ({colors}) => {
       <h2 className="ColorList-select">Please select a color below to view the color:</h2>
       <ul className="ColorList-list">
         {colors.map((color) => {
-          return <Link key={uuid()} className="ColorList-color" to={`/colors/${color.name}`}>{color.name}</Link>;
+          return <li key={uuid()}><Link className="ColorList-color" to={`/colors/${color.name}`}>{color.name}</Link></li>;
         })}
       </ul>
       <h2 className="ColorList-new-color-header">Or add a new color to the list</h2>
