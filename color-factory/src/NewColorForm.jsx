@@ -1,26 +1,30 @@
 import React from "react";
 import {useFormik} from "formik";
+import {useNavigate} from "react-router-dom";
 import "./NewColorForm.css";
 
 const NewColorForm = ({addNewColor}) => {
-  /*const validate = (values) => {
+  const navigate = useNavigate();
+
+  const validate = (values) => {
     const errors = {};
     for (let value in values) {
       if (!values[value]) errors[value] = "Required!";
     }
     return errors;
-  };*/
+  };
 
   const formik = useFormik({
     initialValues: {
       name: '',
       hex: ''
     },
-    //validate,
+    validate,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: values => {
       addNewColor(values);
+      
     }
   });
 
@@ -39,6 +43,7 @@ const NewColorForm = ({addNewColor}) => {
       {formik.errors.hex ? <div className="NewColorForm-error">{formik.errors.hex}</div> : null} <br/>
 
       <button className="NewColorForm-submit-button" type="submit">Add Color</button>
+      <button className="NewColorForm-home-button" type="button" onClick={() => navigate("/colors")}>Back to Home Page</button>
     </form>
   );
 };

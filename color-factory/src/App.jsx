@@ -7,12 +7,14 @@ import FilterColors from "./FilterColors.jsx";
 
 import './App.css';
 
+const initialValues = [
+  {name: "red", hex: "#FF0000"},
+  {name: "yellow", hex: "#FFFF00"},
+  {name: "green", hex: "#00FF00"}
+];
+
 function App() {
-  const [colors, setColors] = useState([
-    {name: "red", hex: "#FF0000"},
-    {name: "yellow", hex: "#FFFF00"},
-    {name: "green", hex: "#00FF00"}
-  ]);
+  const [colors, setColors] = useState(initialValues);
 
   const addNewColor = (newColor) => {
     setColors([newColor, ...colors]);

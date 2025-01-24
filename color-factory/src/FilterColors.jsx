@@ -6,11 +6,11 @@ import ColorView from "./ColorView.jsx";
 const FilterColors = ({colorsToFilter}) => {
   const {color} = useParams();
   const navigate = useNavigate();
-  const [selectedColor] = colorsToFilter.filter((color) => color.name == color);
+  const [selectedColor] = colorsToFilter.filter((colorObject) => colorObject.name == color);
 
   return (
     <>
-      {selectedColor ? <ColorView color={selectedColor}/> : <Navigate to="/colors"/>}
+      {selectedColor ? <ColorView color={selectedColor}/> : <Navigate to="/colors" />}
       <button className="ColorView-home-button" onClick={() => navigate("/colors")}>Go to Home Page</button>
     </>
   );
