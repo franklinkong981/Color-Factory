@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test <App/> rendering > matches the snapshot for the App component 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="ColorList"
+    >
+      <h1
+        class="ColorList-welcome"
+      >
+        Welcome to the Color Factory!
+      </h1>
+      <h2
+        class="ColorList-select"
+      >
+        Please select a color below to view the color:
+      </h2>
+      <ul
+        class="ColorList-list"
+      >
+        <li>
+          <a
+            class="ColorList-color"
+            data-discover="true"
+            href="/colors/Red"
+          >
+            Red
+          </a>
+        </li>
+        <li>
+          <a
+            class="ColorList-color"
+            data-discover="true"
+            href="/colors/Yellow"
+          >
+            Yellow
+          </a>
+        </li>
+        <li>
+          <a
+            class="ColorList-color"
+            data-discover="true"
+            href="/colors/Green"
+          >
+            Green
+          </a>
+        </li>
+      </ul>
+      <h2
+        class="ColorList-new-color-header"
+      >
+        Or add a new color to the list
+      </h2>
+      <button
+        class="ColorList-new-color-button"
+      >
+        <a
+          data-discover="true"
+          href="/colors/new"
+        >
+          Add New Color
+        </a>
+      </button>
+      <button
+        class="ColorList-rest-colors-button"
+      >
+        Reset Colors
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
